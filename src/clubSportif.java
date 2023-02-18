@@ -34,13 +34,13 @@ public class clubSportif {
                 return null;
         }
 
-        // public static Entraineur getEntraineur(int id) {
-        // for (Entraineur at : listEntraineur) {
-        // if (at.getId() == id)
-        // return at;
-        // }
-        // return null;
-        // }
+        public static Entraineur getEntraineur(int id) {
+                for (Personne at : listPersonnes) {
+                        if (at.getId() == id && at instanceof Entraineur)
+                                return (Entraineur) at;
+                }
+                return null;
+        }
 
         // public static void supprimerAthleteNonAssure(Athlete athlete) {
 
