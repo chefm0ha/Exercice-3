@@ -19,11 +19,12 @@ public class clubSportif {
                 System.out.println();
         }
 
-        // public static void listerEntraineurs() {
-        // for (Entraineur en : listEntraineur)
-        // en.afficher();
-        // System.out.println();
-        // }
+        public static void listerEntraineurs() {
+                for (Personne en : listPersonnes)
+                        if (en instanceof Entraineur)
+                                en.afficher();
+                System.out.println();
+        }
 
         // public static Athlete getAthlete(int id) {
         // for (Athlete at : listAthlete) {
@@ -85,7 +86,7 @@ public class clubSportif {
 
                 listPersonnes.add(en1);
 
-                listerAthletes();
+                // listerAthletes();
 
                 // System.out.println("Les atheletes non assure sont: ");
                 // listerAthletesNonAssure();
