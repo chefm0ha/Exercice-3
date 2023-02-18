@@ -26,13 +26,13 @@ public class clubSportif {
                 System.out.println();
         }
 
-        // public static Athlete getAthlete(int id) {
-        // for (Athlete at : listAthlete) {
-        // if (at.getId() == id)
-        // return at;
-        // }
-        // return null;
-        // }
+        public static Athlete getAthlete(int id) {
+                for (Personne at : listPersonnes) {
+                        if (at.getId() == id && at instanceof Athlete)
+                                return (Athlete) at;
+                }
+                return null;
+        }
 
         // public static Entraineur getEntraineur(int id) {
         // for (Entraineur at : listEntraineur) {
