@@ -42,26 +42,26 @@ public class clubSportif {
                 return null;
         }
 
-        // public static void supprimerAthleteNonAssure(Athlete athlete) {
+        public static void supprimerAthleteNonAssure(Athlete athlete) {
 
-        // // Guard Clause
-        // if (athlete.estAssure()) {
-        // System.out.println("Cet athlete est assure!");
-        // return;
-        // }
+                // Guard Clause
+                if (athlete.estAssure()) {
+                        System.out.println("Cet athlete est assure!");
+                        return;
+                }
 
-        // boolean deleted = false;
-        // for (Athlete at : listAthlete)
-        // if (at.equals(athlete)) {
-        // listAthlete.remove(at);
-        // deleted = true;
-        // break;
-        // }
-        // if (deleted)
-        // System.out.println("L'athlete est supprime avec succes");
-        // else
-        // System.out.println("L'athlete n'existe pas");
-        // }
+                boolean deleted = false;
+                for (Personne at : listPersonnes)
+                        if (at.equals(athlete)) {
+                                listPersonnes.remove(at);
+                                deleted = true;
+                                break;
+                        }
+                if (deleted)
+                        System.out.println("L'athlete est supprime avec succes");
+                else
+                        System.out.println("L'athlete n'existe pas");
+        }
 
         public static void main(String[] args) {
 
@@ -107,9 +107,9 @@ public class clubSportif {
                 // else
                 // en.afficher();
 
-                // supprimerAthleteNonAssure(at1);
+                supprimerAthleteNonAssure(at1);
 
-                // listerAthletes();
+                listerAthletes();
 
         }
 
