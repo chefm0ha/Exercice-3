@@ -3,64 +3,64 @@ import java.util.LinkedList;
 
 public class clubSportif {
 
-        static LinkedList<Athlete> listAthlete = new LinkedList<Athlete>();
-        static LinkedList<Entraineur> listEntraineur = new LinkedList<Entraineur>();
+        static LinkedList<Personne> listPersonnes = new LinkedList<Personne>();
 
         public static void listerAthletes() {
-                for (Athlete at : listAthlete)
-                        at.afficher();
-                System.out.println();
-        }
-
-        public static void listerAthletesNonAssure() {
-                for (Athlete at : listAthlete)
-                        if (!at.estAssure())
+                for (Personne at : listPersonnes)
+                        if (at instanceof Athlete)
                                 at.afficher();
                 System.out.println();
         }
 
-        public static void listerEntraineurs() {
-                for (Entraineur en : listEntraineur)
-                        en.afficher();
+        public static void listerAthletesNonAssure() {
+                for (Personne at : listPersonnes)
+                        if (at instanceof Athlete && !((Athlete) at).estAssure())
+                                at.afficher();
                 System.out.println();
         }
 
-        public static Athlete getAthlete(int id) {
-                for (Athlete at : listAthlete) {
-                        if (at.getId() == id)
-                                return at;
-                }
-                return null;
-        }
+        // public static void listerEntraineurs() {
+        // for (Entraineur en : listEntraineur)
+        // en.afficher();
+        // System.out.println();
+        // }
 
-        public static Entraineur getEntraineur(int id) {
-                for (Entraineur at : listEntraineur) {
-                        if (at.getId() == id)
-                                return at;
-                }
-                return null;
-        }
+        // public static Athlete getAthlete(int id) {
+        // for (Athlete at : listAthlete) {
+        // if (at.getId() == id)
+        // return at;
+        // }
+        // return null;
+        // }
 
-        public static void supprimerAthleteNonAssure(Athlete athlete) {
+        // public static Entraineur getEntraineur(int id) {
+        // for (Entraineur at : listEntraineur) {
+        // if (at.getId() == id)
+        // return at;
+        // }
+        // return null;
+        // }
 
-                // Guard Clause
-                if (athlete.estAssure()) {
-                        System.out.println("Cet athlete est assure!");
-                        return;
-                }
+        // public static void supprimerAthleteNonAssure(Athlete athlete) {
 
-                boolean deleted = false;
-                for (Athlete at : listAthlete)
-                        if (at.equals(athlete)) {
-                                listAthlete.remove(at);
-                                deleted = true;
-                                break;
-                        }
-                if (deleted)
-                        System.out.println("L'athlete est supprime avec succes");
-                else
-                        System.out.println("L'athlete n'existe pas");
-        }
+        // // Guard Clause
+        // if (athlete.estAssure()) {
+        // System.out.println("Cet athlete est assure!");
+        // return;
+        // }
+
+        // boolean deleted = false;
+        // for (Athlete at : listAthlete)
+        // if (at.equals(athlete)) {
+        // listAthlete.remove(at);
+        // deleted = true;
+        // break;
+        // }
+        // if (deleted)
+        // System.out.println("L'athlete est supprime avec succes");
+        // else
+        // System.out.println("L'athlete n'existe pas");
+        // }
 
         public static void main(String[] args) {
 
@@ -80,12 +80,12 @@ public class clubSportif {
                 Entraineur en1 = new Entraineur(3, "said", "Elhafyani", null, LocalDate.of(2002, 8, 14), "Errachidia",
                                 null, null, 6000);
 
-                listAthlete.add(at1);
-                listAthlete.add(at2);
+                listPersonnes.add(at1);
+                listPersonnes.add(at2);
 
-                listEntraineur.add(en1);
+                listPersonnes.add(en1);
 
-                // listerAthletes(listeAthlete);
+                listerAthletes();
 
                 // System.out.println("Les atheletes non assure sont: ");
                 // listerAthletesNonAssure();
@@ -106,9 +106,9 @@ public class clubSportif {
                 // else
                 // en.afficher();
 
-                supprimerAthleteNonAssure(at1);
+                // supprimerAthleteNonAssure(at1);
 
-                listerAthletes();
+                // listerAthletes();
 
         }
 
